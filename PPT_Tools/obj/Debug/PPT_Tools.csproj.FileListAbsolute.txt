@@ -11,3 +11,16 @@ C:\Users\60034941\Desktop\Work\Scripting\C#\PPT_Tools\PPT_Tools\obj\Debug\PPT_To
 C:\Users\60034941\Desktop\Work\Scripting\C#\PPT_Tools\PPT_Tools\obj\Debug\PPT_Tools.dll
 C:\Users\60034941\Desktop\Work\Scripting\C#\PPT_Tools\PPT_Tools\obj\Debug\PPT_Tools.pdb
 C:\Users\60034941\Desktop\Work\Scripting\C#\PPT_Tools\PPT_Tools\obj\Debug\PPT_Tools.PPT_Tools_Panel.resources
+D:\Programming\C#\PPT_Tools\PPT_Tools\bin\Debug\PPT_Tools.dll
+D:\Programming\C#\PPT_Tools\PPT_Tools\bin\Debug\PPT_Tools.pdb
+D:\Programming\C#\PPT_Tools\PPT_Tools\bin\Debug\PPT_Tools.dll.manifest
+D:\Programming\C#\PPT_Tools\PPT_Tools\bin\Debug\PPT_Tools.vsto
+D:\Programming\C#\PPT_Tools\PPT_Tools\bin\Debug\Microsoft.Office.Tools.Common.v4.0.Utilities.dll
+D:\Programming\C#\PPT_Tools\PPT_Tools\obj\Debug\PPT_Tools.csprojResolveAssemblyReference.cache
+D:\Programming\C#\PPT_Tools\PPT_Tools\obj\Debug\PPT_Tools.PPT_Tools_Panel.resources
+D:\Programming\C#\PPT_Tools\PPT_Tools\obj\Debug\PPT_Tools.Properties.Resources.resources
+D:\Programming\C#\PPT_Tools\PPT_Tools\obj\Debug\PPT_Tools.csproj.GenerateResource.cache
+D:\Programming\C#\PPT_Tools\PPT_Tools\obj\Debug\PPT_Tools.csproj.CoreCompileInputs.cache
+D:\Programming\C#\PPT_Tools\PPT_Tools\obj\Debug\PPT_Tools.csproj.CopyComplete
+D:\Programming\C#\PPT_Tools\PPT_Tools\obj\Debug\PPT_Tools.dll
+D:\Programming\C#\PPT_Tools\PPT_Tools\obj\Debug\PPT_Tools.pdb

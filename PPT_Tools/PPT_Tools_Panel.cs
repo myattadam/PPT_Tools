@@ -26,7 +26,7 @@ namespace PPT_Tools
         List<Rect> layout;
 
         public PPT_Tools_Panel() => InitializeComponent();
-
+        
         private void PPT_Tools_Panel_Load(object sender, EventArgs e) { }
 
         private void BtnCopyLayout_Click(object sender, EventArgs e) => layout = Tools.GetLayout; 
@@ -41,7 +41,7 @@ namespace PPT_Tools
         }
     }
 
-
+    
 
     public static class Tools
     {
