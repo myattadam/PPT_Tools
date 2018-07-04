@@ -23,29 +23,20 @@ namespace PPT_Tools
     public partial class PPT_Tools_Panel : UserControl
     {
 
-        List<PowerPoint.Shape> selected;
+        List<Rect> layout;
 
         public PPT_Tools_Panel() => InitializeComponent();
 
         private void PPT_Tools_Panel_Load(object sender, EventArgs e) { }
 
-        private void BtnCopyLayout_Click(object sender, EventArgs e)
-        {
-            selected = Tools.SelectedShapes;
-            selected.ForEach(shape => TxtOutput.Text += shape.Name + "\n");
-        }
+        private void BtnCopyLayout_Click(object sender, EventArgs e) => layout = Tools.GetLayout; 
 
         private void BtnPasteLayout_Click(object sender, EventArgs e)
         {
-
-            var pattern = new List<Rect>();
-            var current = Tools.SelectedShapes;
-
-            selected.ForEach(shape => pattern.Add(new Rect(shape)));            
-
-            for(var i = 0; i < current.Count; i++)
+            if (Tools.Selection.Type == PowerPoint.PpSelectionType.ppSelectionShapes)
             {
-                pattern[i % pattern.Count].Apply(current[i]);
+                var i = 0;
+                foreach (var shape in Tools.ShapeSelector) layout[i++ % layout.Count].Apply(shape);
             }
         }
     }
@@ -55,20 +46,28 @@ namespace PPT_Tools
     public static class Tools
     {
         public static PowerPoint.Application Application { get => Globals.ThisAddIn.Application; }
-        
-        public static List<PowerPoint.Shape> SelectedShapes {
-            get {
-                var selected = Application.ActiveWindow.Selection;
-                var shapes = new List<PowerPoint.Shape>();
+        public static PowerPoint.Selection Selection { get => Application.ActiveWindow.Selection;  }
+        public static _ShapeSelector ShapeSelector { get => new _ShapeSelector(); }
 
-                if (selected.Type == PowerPoint.PpSelectionType.ppSelectionShapes)
+        public class _ShapeSelector
+        {
+            public IEnumerator<PowerPoint.Shape> GetEnumerator()
+            {
+                if (Selection.Type == PowerPoint.PpSelectionType.ppSelectionShapes)
                 {
-                    foreach (var sh in selected.ShapeRange) shapes.Add((PowerPoint.Shape)sh);
+                    foreach (PowerPoint.Shape shape in Selection.ShapeRange) yield return shape;
                 }
+            }
+        }
 
+        public static List<Rect> GetLayout {
+            get {
+                var shapes = new List<Rect>();
+                foreach (var shape in ShapeSelector) shapes.Add(new Rect(shape));
                 return shapes;
             }
         }
+
     }
 
 }
